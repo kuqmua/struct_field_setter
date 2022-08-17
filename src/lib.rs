@@ -40,7 +40,7 @@ pub fn derive_struct_field_setter(input: proc_macro::TokenStream) -> proc_macro:
         let setter_function_ident = syn::Ident::new(&format!("set_{field_ident}"), ident.span());
         quote::quote! {
             pub fn #setter_function_ident(&mut self, value: #field_type_ident) {
-                &self.#field_ident = value;
+                self.#field_ident = value;
             }
         }
     });
