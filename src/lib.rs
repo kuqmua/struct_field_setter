@@ -1,7 +1,7 @@
 #[proc_macro_derive(DeriveStructFieldSetter)]
 pub fn derive_struct_field_setter(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let ast: syn::DeriveInput =
-        syn::parse(input).expect("derive_struct_field_setter syn::parse(input) failed");
+        syn::parse(input).expect("DeriveStructFieldSetter syn::parse(input) failed");
     let fields = match ast.data {
         syn::Data::Struct(struct_item) => struct_item.fields,
         _ => panic!("DeriveStructFieldSetter only works on structs"),
