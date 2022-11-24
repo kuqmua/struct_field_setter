@@ -1,3 +1,11 @@
+#![deny(
+    clippy::indexing_slicing,
+    clippy::integer_arithmetic,
+    clippy::unwrap_used,
+    clippy::float_arithmetic
+)]
+#![allow(clippy::too_many_arguments)]
+
 #[proc_macro_derive(DeriveStructFieldSetter)]
 pub fn derive_struct_field_setter(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let ast: syn::DeriveInput =
